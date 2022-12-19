@@ -12,6 +12,8 @@ module.exports = {
     'comma-dangle': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     semi: 'off',
+    'vue/multi-word-component-names': 'off',
+    'space-before-function-paren': 'off',
   },
   overrides: [
     {
