@@ -4,7 +4,19 @@
   </div>
 </template>
 <script>
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
 export default {
-  name: 'FeedBacks'
-}
+  setup() {
+    const router = useRouter();
+
+    onMounted(() => {
+      const token = window.localStorage.getItem('token');
+      if (!token) {
+        router.push('/');
+      }
+    });
+  },
+};
 </script>
