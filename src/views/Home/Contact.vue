@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center w-full">
     <div class="flex flex-col items-center w-4/5 max-w-6xl my-16">
-      <h1 class="text-4xl font-brack text-center text-gray-800">
+      <h1 class="text-4xl font-black text-center text-gray-800">
         Alguma dúvida?
       </h1>
       <p class="text-lg test-center text-gray-800 font-regular">
@@ -11,11 +11,16 @@
         <a
           href="mailto:joaopaulo.gomeslima8@gmail.com"
           class="px-6 py-2 font-bold text-white rounded-full bg-brand-main"
-          >Nos mante um e-mail!</a
         >
+          Nos mande um e-mail!
+        </a>
       </div>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'Contact',
+};
+</script>

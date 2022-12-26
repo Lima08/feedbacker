@@ -2,13 +2,15 @@
   <custom-header @create-account="handleAccountCreate" @login="handleLogin" />
   <contact />
   <div class="flex justify-center py-10 bg-brand-gray">
-    <p class="font-medium text-certer text-gray-800">feedbacker 2022</p>
+    <p class="font-medium text-center text-gray-800">feed-backer 2022 ®</p>
   </div>
 </template>
 
 <script>
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import ModalLogin from '../../components/ModalLogin/index.vue';
+import useModal from '../../hooks/useModal';
 import Contact from './Contact.vue';
 import CustomHeader from './CustomHeader.vue';
 
@@ -19,6 +21,7 @@ export default {
   },
   setup() {
     const router = useRouter();
+    const modal = useModal();
 
     onMounted(() => {
       const token = window.localStorage.getItem('token');
@@ -27,7 +30,11 @@ export default {
       }
     });
 
-    function handleLogin() {}
+    function handleLogin() {
+      modal.open({
+        component: ModalLogin,
+      });
+    }
 
     function handleAccountCreate() {}
 

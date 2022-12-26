@@ -7,8 +7,11 @@
         </div>
 
         <div class="flex">
-          <button class="btn">Crie uma conta</button>
-          <button class="btn btn-white">Entrar</button>
+          <button class="btn" @click="test">Crie uma conta</button>
+
+          <button class="btn btn-white" @click="() => emit('login')">
+            Entrar
+          </button>
         </div>
       </div>
 
@@ -34,8 +37,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'CustomHeader',
+  components: {},
+  setup(_, { emit }) {
+    return {
+      emit,
+    };
+  },
+};
 </script>
+
 <style scoped>
 .header {
   @apply bg-brand-main w-full flex justify-center;
