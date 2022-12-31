@@ -7,7 +7,9 @@
         </div>
 
         <div class="flex">
-          <button class="btn" @click="test">Crie uma conta</button>
+          <button class="btn" @click="() => emit('create-account')">
+            Crie uma conta
+          </button>
 
           <button class="btn btn-white" @click="() => emit('login')">
             Entrar

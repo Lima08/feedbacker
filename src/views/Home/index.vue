@@ -9,6 +9,7 @@
 <script>
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import ModalCreateAccount from '../../components/ModalCreateAccount/index.vue';
 import ModalLogin from '../../components/ModalLogin/index.vue';
 import useModal from '../../hooks/useModal';
 import Contact from './Contact.vue';
@@ -36,7 +37,11 @@ export default {
       });
     }
 
-    function handleAccountCreate() {}
+    function handleAccountCreate() {
+      modal.open({
+        component: ModalCreateAccount,
+      });
+    }
 
     return {
       handleLogin,
